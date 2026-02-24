@@ -218,8 +218,9 @@ img {
 
 .card, .event-card {
   padding: 2rem;
+  margin: 2rem;
   border-radius: 10px;
-  background: #fff;
+  background: #a9a9c479;
   box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
