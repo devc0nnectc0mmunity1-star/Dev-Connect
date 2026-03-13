@@ -1,20 +1,30 @@
 /* ================= HERO ================= */
 .hero.ourcourse-hero {
-  background: linear-gradient(270deg, var(--primary-dark), var(--primary), black);
+  background: linear-gradient(
+    270deg,
+    var(--primary-dark),
+    var(--primary),
+    black
+  );
   background-size: 600% 600%;
   color: white;
   padding: 2rem 0;
   text-align: center;
   box-shadow: 0 2px 9px rgba(0, 0, 0, 0.904);
-  animation: gradientFlow 60s ease infinite; 
+  animation: gradientFlow 60s ease infinite;
 }
 
 @keyframes gradientFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-
 
 .hero.ourcourse-hero h1 {
   font-size: 2.8rem;
@@ -27,7 +37,6 @@
   opacity: 0.9;
 }
 
-
 .hero.ourcourse-hero .hero-paragraph {
   max-width: 700px;
   font-size: 1.3rem;
@@ -37,7 +46,7 @@
 .hero.ourcourse-hero .badge {
   display: inline-block;
   font-weight: 600;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   padding: 0.4rem 1rem;
   border-radius: 50px;
   font-size: 0.9rem;
@@ -57,16 +66,18 @@
   background: #060037;
   color: #fff;
   border: 2px solid #100a4c;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .course-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .course-card h3 {
-  color: #F0F8FF;
+  color: #f0f8ff;
 }
 
 .btn-light.ourcourse-btn {
@@ -98,7 +109,7 @@
 
 .search-bar-container {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
   max-width: 100%;
   margin-left: 10px;
@@ -120,8 +131,8 @@
   background: #fff;
   color: var(--dark);
   transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  max-width: 500px; 
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
 }
 
 .course-search::placeholder {
@@ -132,7 +143,7 @@
 .course-search:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 8px rgba(6,0,55,0.4);
+  box-shadow: 0 0 8px rgba(6, 0, 55, 0.4);
 }
 
 .course-search-btn {
@@ -141,7 +152,9 @@
   font-size: 1.2rem;
   color: var(--primary);
   cursor: pointer;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
 .course-search-btn:hover {
@@ -158,7 +171,7 @@
 }
 
 .search-right .dropdown:not(.profile-dropdown) {
-  margin-right: 1rem; 
+  margin-right: 1rem;
 }
 
 .dropdown {
@@ -187,7 +200,7 @@
   left: 0;
   background: #fff;
   min-width: 200px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   z-index: 10;
 
@@ -225,11 +238,12 @@
 }
 
 .profile-dropdown {
-  margin-left: auto; 
+  margin-left: auto;
 }
 /* ================= HERO TEXT ANIMATIONS ================= */
 
-#hero-heading, #hero-paragraph {
+#hero-heading,
+#hero-paragraph {
   transition: all 0.6s ease;
 }
 
@@ -293,7 +307,6 @@
   }
 }
 
-
 /* ================= COURSE CARDS ================= */
 .grid-3 {
   display: grid;
@@ -305,12 +318,12 @@
   background: #fff;
   border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  position: relative; 
+  position: relative;
 }
 
 .card-content {
@@ -353,7 +366,7 @@
 
 .card:hover {
   transform: none !important;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.08) !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08) !important;
 }
 
 /* ================= OVERLAY ================= */
@@ -369,7 +382,7 @@
   opacity: 0;
   transition: all 0.4s ease;
   z-index: 20;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -378,11 +391,12 @@
 }
 
 .card-overlay h4 {
-  font-size: 1.2rem;       /* slightly smaller */
-  font-weight: 600;        /* lighter than 700 */
+  font-size: 1.2rem; /* slightly smaller */
+  padding: 4px;
+  font-weight: 600; /* lighter than 700 */
   margin-bottom: 0.8rem;
   color: var(--dark);
-  letter-spacing: 0.5px;   /* subtle premium spacing */
+  letter-spacing: 0.5px; /* subtle premium spacing */
 }
 
 .card-overlay ul {
@@ -392,23 +406,23 @@
 }
 
 .card-overlay li {
-  font-size: 0.85rem;      /* smaller text */
+  font-size: 0.85rem; /* smaller text */
   color: var(--gray-dark); /* softer color */
-  margin-bottom: 0.6rem;   /* tighter spacing */
-  line-height: 1.4;        /* cleaner line height */
+  margin-bottom: 0.6rem; /* tighter spacing */
+  line-height: 1.4; /* cleaner line height */
 }
 
 .card-overlay li::before {
-  content: "- ";           /* dash before each item */
+  content: "- "; /* dash before each item */
   color: var(--primary);
-  font-weight: 500;        /* lighter dash */
+  font-weight: 500; /* lighter dash */
 }
 
 .card {
-  cursor: pointer;         /* makes card clickable */
+  cursor: pointer; /* makes card clickable */
 }
 
 .card-overlay.show {
   opacity: 1;
-  transform: scale(1.02);  /* slight zoom-in */
+  transform: scale(1.02); /* slight zoom-in */
 }

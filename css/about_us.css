@@ -1,7 +1,7 @@
 :root {
-  --about-primary: #3C2EFB;
+  --about-primary: #3c2efb;
   --about-dark: #1a1657;
-  --about-light: #F0F8FF;
+  --about-light: #f0f8ff;
   --about-gray: #666;
 }
 
@@ -25,7 +25,12 @@ body {
 
 /* ================= NAV ================= */
 .btn-about {
-  background: linear-gradient(270deg, var(--primary), black, var(--primary-dark));
+  background: linear-gradient(
+    270deg,
+    var(--primary),
+    black,
+    var(--primary-dark)
+  );
   background-size: 600% 600%;
   color: white;
   padding: 0.6rem 1.2rem;
@@ -35,21 +40,24 @@ body {
   animation: gradientFlow 60s ease infinite;
 }
 
-
 /* ================= ABOUT HERO ================= */
 .about-hero {
-  background: linear-gradient(270deg, var(--primary-dark), var(--primary), black);
+  background: linear-gradient(
+    270deg,
+    var(--primary-dark),
+    var(--primary),
+    black
+  );
   background-size: 600% 600%;
   color: white;
   text-align: center;
-  min-height: 80vh; 
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-shadow: 0 2px 9px rgba(0, 0, 0, 0.904);
   animation: gradientFlow 60s ease infinite;
 }
-
 
 .about-hero h1 {
   font-size: 2.8rem;
@@ -77,13 +85,15 @@ body {
   background: #fff;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .about-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .about-card h3 {
@@ -125,7 +135,7 @@ body {
   font-style: italic;
   font-weight: 600;
   color: var(--about-dark);
-  font-size: 0.96rem; 
+  font-size: 0.96rem;
   line-height: 1.4;
 }
 
@@ -159,7 +169,6 @@ body {
   color: var(--about-gray);
 }
 
-
 /* ================= MISSION & VISION ================= */
 .about-grid-2 {
   display: grid;
@@ -176,19 +185,15 @@ body {
     var(--about-primary) 66%,
     black 66%,
     black 100%
-    
   );
   background-size: 200% 200%;
   color: white;
   padding: 2rem;
   border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   text-align: center;
   animation: gradientFlow 20s ease infinite;
 }
-
-
-
 
 .event-icon {
   font-size: 2.5rem;
@@ -212,20 +217,42 @@ body {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 992px) {
-  .about-grid { grid-template-columns: 1fr 1fr; }
-  .about-hero h1 { font-size: 2.2rem; }
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .about-hero h1 {
+    font-size: 2.2rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .about-grid { grid-template-columns: 1fr; }
-  .about-card { width: 100%; max-width: 320px; margin: auto; }
-  .about-hero h1 { font-size: 1.8rem; }
-  .about-tagline { font-size: 1rem; }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-card {
+    width: 100%;
+    max-width: 320px;
+    margin: auto;
+  }
+  .about-hero h1 {
+    font-size: 1.8rem;
+  }
+  .about-tagline {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .about-hero h1 { font-size: 1.6rem; }
-  .about-tagline { font-size: 0.9rem; }
-  .about-card h3 { font-size: 1.2rem; }
-  .about-card .card-paragraph { font-size: 0.85rem; }
+  .about-hero h1 {
+    font-size: 1.6rem;
+  }
+  .about-tagline {
+    font-size: 0.9rem;
+  }
+  .about-card h3 {
+    font-size: 1.2rem;
+  }
+  .about-card .card-paragraph {
+    font-size: 0.85rem;
+  }
 }
