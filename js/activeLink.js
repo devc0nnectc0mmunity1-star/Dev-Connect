@@ -1,8 +1,8 @@
-const links = document.querySelectorAll('.nav-links a');
+const links = document.querySelectorAll(".nav-links a");
 const currentUrl = window.location.href;
 
-links.forEach(link => {
+links.forEach((link) => {
   if (link.href === currentUrl) {
-    link.classList.add('active');
+    link.classList.add("active");
   }
 });
