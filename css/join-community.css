@@ -1,7 +1,7 @@
 :root {
   --primary: #060037;
   --primary-dark: #100a4c;
-  --light: #F0F8FF;
+  --light: #f0f8ff;
   --gray: #666;
   --dark: #111;
 }
@@ -15,7 +15,7 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .modal .join-container {
@@ -23,7 +23,7 @@
   background: #fff;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   width: 100%;
   max-width: 450px;
   text-align: center;
@@ -57,14 +57,16 @@
   border-radius: 8px;
   font-size: 1rem;
   background: #fafafa;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .modal input:focus,
 .modal textarea:focus,
 .modal select:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(6,0,55,0.1);
+  box-shadow: 0 0 0 3px rgba(6, 0, 55, 0.1);
   outline: none;
 }
 
@@ -106,12 +108,14 @@
   font-weight: 600;
   cursor: pointer;
   margin-top: 1.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .modal .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .modal .close-btn {
@@ -152,7 +156,9 @@
   font-weight: 500;
   cursor: pointer;
   margin-top: 1rem;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
 }
 
 .modal .btn-secondary:hover {
@@ -160,9 +166,26 @@
   transform: translateY(-2px);
 }
 
+.reset-password-btn {
+  text-align: left;
+  border: none;
+  background-color: white;
+  margin-top: 0.8rem;
+}
+
+.reset-password-btn:hover {
+  cursor: pointer;
+}
+
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 480px) {

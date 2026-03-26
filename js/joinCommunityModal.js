@@ -1,22 +1,22 @@
 const joinBtnHeader = document.getElementById("joinBtn");
-const joinBtnHero = document.querySelector(".btn-light"); 
+const joinBtnHero = document.querySelector(".btn-light");
 const joinBtnAbout = document.querySelector(".btn-about");
 const joinBtnPrimary = document.querySelector(".btn-primary");
 const modal = document.getElementById("joinCommunityModal");
 
 function openModal() {
   fetch("join-community.html")
-    .then(res => res.text())
-    .then(html => {
+    .then((res) => res.text())
+    .then((html) => {
       modal.innerHTML = html;
       modal.style.display = "block";
 
       attachFormHandler();
     })
-    .catch(err => console.error("Error loading form:", err));
+    .catch((err) => console.error("Error loading form:", err));
 }
 
-[joinBtnHeader, joinBtnHero].forEach(btn => {
+[joinBtnHeader, joinBtnHero].forEach((btn) => {
   if (btn) {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -34,6 +34,7 @@ window.addEventListener("click", (e) => {
 function attachFormHandler() {
   const signupWrapper = document.getElementById("signupFormWrapper");
   const signinWrapper = document.getElementById("signinFormWrapper");
+  const resetBtn = document.getElementById("reset-password-btn");
 
   const closeBtn = document.querySelector(".close-btn");
   if (closeBtn) {
@@ -69,6 +70,13 @@ function attachFormHandler() {
     });
   }
 
+  if (resetBtn) {
+    resetBtn.addEventListener(
+      "click",
+      () => (window.location.href = "password-recovery.html"),
+    );
+  }
+
   const joinForm = document.getElementById("joinForm");
   if (joinForm) {
     joinForm.addEventListener("submit", (e) => {
@@ -78,7 +86,9 @@ function attachFormHandler() {
       const reason = document.getElementById("reason").value.trim();
       const reasonOption = document.getElementById("reasonOption").value;
       const finalReason = reason || reasonOption;
-      alert(`Thanks ${fullname}! Check your email (${email}) for our WhatsApp link.\nReason: ${finalReason}`);
+      alert(
+        `Thanks ${fullname}! Check your email (${email}) for our WhatsApp link.\nReason: ${finalReason}`,
+      );
     });
   }
 
