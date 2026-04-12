@@ -6,6 +6,7 @@
   <title>DevConnect | Events</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/events.css"/>
+  <link rel="stylesheet" href="css/page_transition.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -29,6 +30,18 @@
     </nav>
 
     <a href="#" class="btn-primary" id="joinBtn">Join Community</a>
+    
+ <div class="dropdown profile-dropdown">
+          <button class="dropbtn">
+            <i class="fas fa-user-circle"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Settings</a>
+            <a href="#">My Learning</a>
+            <a href="q&a_page.html">Q&A</a>
+            <a href="#" id="logoutBtn">Logout</a>
+          </div>
+        </div>
     <div class="hamburger">☰</div>
   </div>
 </header>
@@ -150,9 +163,12 @@
     <p>© 2026 DevConnect. All rights reserved.</p>
   </div>
 </footer>
-
+<div id="joinCommunityModal" class="modal"></div>
+<script src="js/joinCommunityModal.js"></script>
 <script src="js/navToggle.js"></script>
 <script src="js/activeLink.js"></script>
 <script src="js/eventTextSwap.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/page-transition.js"></script>
 </body>
 </html>

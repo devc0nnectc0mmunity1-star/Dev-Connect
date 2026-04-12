@@ -225,7 +225,8 @@
 }
 
 .profile-dropdown {
-  margin-left: auto; 
+  position: relative;
+  display: inline-block; 
 }
 /* ================= HERO TEXT ANIMATIONS ================= */
 

@@ -1,0 +1,33 @@
+body {
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 1s ease, transform 1s ease, background-color 1s ease;
+  background-color: #f8f8f8; 
+}
+
+body.fade-in {
+  opacity: 1;
+  transform: scale(1);
+  background-color: #ffffff; 
+}
+
+body.fade-out {
+  opacity: 0;
+  transform: scale(1.02);
+  background-color: #eeedf2; 
+  filter: blur(6px); 
+  transition: opacity 0.8s ease, transform 0.8s ease, background-color 0.8s ease, filter 0.8s ease;
+}
+
+.page-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.15);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+body.fade-out .page-overlay {
+  opacity: 1;
+}

@@ -211,6 +211,20 @@ body {
 }
 
 
+#joinBtn {
+  display: none;
+}
+
+.profile-dropdown {
+  display: none;
+}
+
+.profile-dropdown.show {
+  display: block;
+}
+
+
+
 /* ================= RESPONSIVE ================= */
 @media (max-width: 480px) {
   .logo-img {

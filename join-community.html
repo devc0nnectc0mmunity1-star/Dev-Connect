@@ -9,10 +9,8 @@
   </head>
   <body>
     <div class="join-container">
-      <!-- Close button -->
       <span class="close-btn">&times;</span>
 
-      <!-- Sign Up Form -->
       <div id="signupFormWrapper">
         <h2>Join Our Community</h2>
         <form id="joinForm">
@@ -23,7 +21,7 @@
             name="fullname"
             placeholder="Enter your full name"
             required
-          />
+            />
 
           <label for="email">Email Address</label>
           <input
@@ -34,7 +32,8 @@
             required
           />
 
-            <label for="password">Password</label>
+              <label for="password">Password</label>
+        <div class="password-container">
           <input
             type="password"
             id="password"
@@ -42,6 +41,10 @@
             placeholder="Enter your password"
             required
           />
+          <span class="toggle-eye" onclick="togglePassword('password', this)">
+            👁️
+          </span>
+        </div>
 
           <label for="reason">Why do you want to join?</label>
           <textarea
@@ -85,14 +88,19 @@
             required
           />
 
-          <label for="signinPassword">Password</label>
-          <input
-            type="password"
-            id="signinPassword"
-            name="signinPassword"
-            placeholder="Enter your password"
-            required
-          />
+      <label for="signinPassword">Password</label>
+      <div class="password-container">
+        <input
+          type="password"
+          id="signinPassword"
+          name="signinPassword"
+          placeholder="Enter your password"
+          required
+        />
+        <span class="toggle-eye" onclick="togglePassword('signinPassword', this)">
+          👁️
+        </span>
+      </div>
 
           <button type="submit" class="btn-primary">Sign In</button>
           <button type="button" class="btn-secondary" id="backToSignup">
@@ -100,7 +108,7 @@
           </button>
         </form>
         <button class="reset-password-btn" id="reset-password-btn">
-          Reset Password?
+          Forgotten Password?
         </button>
         <p class="switch-text">
           New here? <a href="#" id="showSignup">Join Community</a>

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DevConnect</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/page_transition.css">
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/about_us.css" />
 </head>
@@ -29,7 +30,20 @@
     </nav>
 
     <a href="#" id="joinBtn" class="btn-about">Join Community</a>
-        <div class="hamburger">☰</div>
+
+    
+     <div class="dropdown profile-dropdown">
+          <button class="dropbtn">
+            <i class="fas fa-user-circle"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Settings</a>
+            <a href="#">My Learning</a>
+            <a href="q&a_page.html">Q&A</a>
+            <a href="#" id="logoutBtn">Logout</a>
+          </div>
+        </div>
+  <div class="hamburger">☰</div>
   </div>
 </header>
 
@@ -207,5 +221,7 @@
 <script src="js/navToggle.js"></script>
 <script src="js/activeLink.js"></script>
 <script src="js/aboutTextSwap.js"></script>
+ <script src="js/auth.js"></script>
+ <script src="js/page-transition.js"></script>
 </body>
 </html>

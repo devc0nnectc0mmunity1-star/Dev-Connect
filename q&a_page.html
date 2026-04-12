@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevConnect | Q&A Community</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/q&a.css"/>
+</head>
+<body>
+   <header class="header">
+  <div class="container nav">
+    <div class="logo-container">
+      <img src="images/logo-1.png" alt="DevConnect Logo" class="logo-img" />
+      <a href="index.html" class="logo">{DevConnect}</a>
+    </div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="our-course.html">OurCourse</a></li>
+        <li><a href="events.html">Events</a></li>
+      </ul>
+    </nav>
+
+    <a href="#" id="joinBtn" class="btn-primary">Join Community</a>
+    <div class="dropdown profile-dropdown">
+          <button class="dropbtn">
+            <i class="fas fa-user-circle"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Settings</a>
+            <a href="#">My Learning</a>
+            <a href="#" id="logoutBtn">Logout</a>
+          </div>
+        </div>
+    <div class="hamburger">☰</div>
+  </div>
+</header>
+  <main class="main-container">
+    <!-- Left: Ask Question -->
+    <section class="ask-section">
+      <h2>Q&A Community</h2>
+ <div class="ask-box">
+  <div class="input-with-icon">
+    <input type="text" placeholder="What would you like to ask the community?" />
+
+    <!-- Hidden file input -->
+    <input type="file" id="fileUpload" accept="image/*" style="display:none;">
+
+    <!-- Paperclip icon inside textbox -->
+    <span class="upload-icon" onclick="document.getElementById('fileUpload').click()">
+      <i class="fas fa-paperclip"></i>
+    </span>
+  </div>
+
+  <button class="ask-btn">Ask Question</button>
+</div>
+
+<div class="recent-questions">
+  <h3>Recent Questions</h3>
+  <ul>
+    <li>
+      <span class="votes">10</span> How do I debug an HTTP 500 error in Spring Boot?
+      <button class="reply-btn" onclick="toggleReply(this)">Reply</button>
+      <div class="reply-box">
+        <textarea placeholder="Write your answer..."></textarea>
+        <input type="file" accept="image/*">
+        <button class="submit-reply">Submit Answer</button>
+      </div>
+    </li>
+    <li>
+      <span class="votes">8</span> What's the best way to handle async requests in Java?
+      <button class="reply-btn" onclick="toggleReply(this)">Reply</button>
+      <div class="reply-box">
+        <textarea placeholder="Write your answer..."></textarea>
+        <input type="file" accept="image/*">
+        <button class="submit-reply">Submit Answer</button>
+      </div>
+    </li>
+    <li>
+      <span class="votes">5</span> How do I use Thymeleaf for form validation?
+      <button class="reply-btn" onclick="toggleReply(this)">Reply</button>
+      <div class="reply-box">
+        <textarea placeholder="Write your answer..."></textarea>
+        <input type="file" accept="image/*">
+        <button class="submit-reply">Submit Answer</button>
+      </div>
+    </li>
+    <li>
+      <span class="votes">3</span> Can you explain how dependency injection works in Spring?
+      <button class="reply-btn" onclick="toggleReply(this)">Reply</button>
+      <div class="reply-box">
+        <textarea placeholder="Write your answer..."></textarea>
+        <input type="file" accept="image/*">
+        <button class="submit-reply">Submit Answer</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+    </section>
+    <div class="middle-column">
+  <!-- Leaderboard -->
+  <aside class="leaderboard">
+    <h3>Leaderboard</h3>
+    <ol>
+      <li>
+        <span class="rank-icon gold"><i class="fas fa-trophy"></i></span>
+        <img src="images/team-image/Ayomide.png" alt="Bryan Okafor" class="avatar">
+        <span class="rank">1.</span> Bryan Okafor
+      </li>
+      <li>
+        <span class="rank-icon silver"><i class="fas fa-medal"></i></span>
+        <img src="images/team-image/Capstone.jpeg" alt="Funmi Ade" class="avatar">
+        <span class="rank">2.</span> Funmi Ade
+      </li>
+      <li>
+        <span class="rank-icon bronze"><i class="fas fa-medal"></i></span>
+        <img src="images/team-image/Chioma.jpeg" alt="Mike Chinedu" class="avatar">
+        <span class="rank">3.</span> Mike Chinedu
+      </li>
+      <li>
+        <span class="rank-icon"><i class="fas fa-user"></i></span>
+        <img src="images/team-image/Goodluck.png" alt="Clara Ugwu" class="avatar">
+        <span class="rank">4.</span> Clara Ugwu
+      </li>
+      <li>
+        <span class="rank-icon"><i class="fas fa-user"></i></span>
+        <img src="images/team-image/Jomo.jpeg" alt="Ada Ebube" class="avatar">
+        <span class="rank">5.</span> Ada Ebube
+      </li>
+    </ol>
+  </aside>
+
+  <!-- Top Contributors -->
+  <aside class="contributors">
+    <h3>Top Contributors</h3>
+    <ul>
+      <li><img src="images/team-image/Ayomide.png" class="avatar"> Bryan Okafor</li>
+      <li><img src="images/team-image/Capstone.jpeg" class="avatar"> Funmi Ade</li>
+      <li><img src="images/team-image/Chioma.jpeg" class="avatar"> Mike Chinedu</li>
+      <li><img src="images/team-image/Goodluck.png" class="avatar"> Clara Ugwu</li>
+      <li><img src="images/team-image/Jomo.jpeg" class="avatar"> Ada Ebube</li>
+    </ul>
+  </aside>
+</div>
+<section class="answer-section">
+  <div class="question-header">
+    <h2>How do I debug an HTTP 500 error in Spring Boot?</h2>
+    <button class="answer-btn">Answer Question</button>
+  </div>
+  <p class="meta">Asked 5 mins ago | 10 helpful | 4 answers</p>
+  <p class="question-text">
+    I'm having trouble figuring out what's causing an HTTP 500 error in my Spring Boot application.
+    Can someone guide me on the best practices for debugging this issue?
+  </p>
+
+  <!-- Answer 1 -->
+  <div class="answer accepted">
+    <img src="images/team-image/Kajinake.png" alt="Clara Ugwu" class="avatar">
+    <div class="answer-content">
+      <p>
+        <strong>Clara Ugwu</strong> 
+        <span class="meta">– 7 helpful</span>
+        <span class="accepted-badge"><i class="fas fa-check"></i> Accepted</span>
+      </p>
+      <p>To troubleshoot, check your logs for specific stack traces and ensure your controller methods handle exceptions properly.</p>
+      <img src="images/Ai-dev.webp" alt="Debug Screenshot" class="uploaded-img">
+
+      <!-- Reply button + box -->
+      <button class="reply-btn" onclick="toggleReply(this)">Reply</button>
+      <div class="reply-box">
+        <textarea placeholder="Write your reply..."></textarea>
+        <input type="file" accept="image/*">
+        <button class="submit-reply">Submit Reply</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Answer 2 -->
+  <div class="answer">
+    <img src="images/team-image/liam.png" alt="Bryan Okafor" class="avatar">
+    <div class="answer-content">
+      <p><strong>Bryan Okafor</strong> <span class="meta">– 4 helpful</span></p>
+      <p>Make sure to check the HttpServlet stack trace to find the exact cause of the error.</p>
+      <img src="images/html.jpg" alt="Server Error Screenshot" class="uploaded-img">
+
+      <button class="reply-btn" onclick="toggleReply(this)">Reply</button>
+      <div class="reply-box">
+        <textarea placeholder="Write your reply..."></textarea>
+        <input type="file" accept="image/*">
+        <button class="submit-reply">Submit Reply</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Answer 3 -->
+  <div class="answer">
+    <img src="images/javascript.jpg" alt="Ada Ebube" class="avatar">
+    <div class="answer-content">
+      <p><strong>Ada Ebube</strong> <span class="meta">– 3 helpful</span></p>
+      <p>Verify that your application-context.xml is configured correctly. Misconfigurations can lead to 500 errors.</p>
+      <img src="images/java-course.jpg" alt="Server Error Screenshot" class="uploaded-img">
+
+      <button class="reply-btn" onclick="toggleReply(this)">Reply</button>
+      <div class="reply-box">
+        <textarea placeholder="Write your reply..."></textarea>
+        <input type="file" accept="image/*">
+        <button class="submit-reply">Submit Reply</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+  <script src="js/replyToggle.js"></script>
+</body>
+</html>

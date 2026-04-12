@@ -71,6 +71,19 @@
   color: #f0f0f0;
 }
 
+#joinBtn {
+  display: none;
+}
+
+.profile-dropdown {
+  display: none;
+}
+
+.profile-dropdown.show {
+  display: block;
+}
+
+
 /* ================= MOTTO SECTION ================= */
 .motto-section {
   background: linear-gradient(135deg, #1a1a1a, #2c3e50);
@@ -264,6 +277,8 @@
   }
 
 }
+
+
 
 /* ================= LARGE TABLETS / LAPTOPS (≤992px) ================= */
 @media (max-width: 992px) {
