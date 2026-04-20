@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DevConnect | Q&A Community</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <link rel="stylesheet" href="css/q&a.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
    <header class="header">
@@ -15,7 +14,7 @@
     <div class="logo-container">
       <img src="images/logo-1.png" alt="DevConnect Logo" class="logo-img" />
       <a href="index.html" class="logo">{DevConnect}</a>
-    </div>
+    </div> 
 
     <nav>
       <ul class="nav-links">
@@ -25,6 +24,7 @@
         <li><a href="projects.html">Projects</a></li>
         <li><a href="our-course.html">OurCourse</a></li>
         <li><a href="events.html">Events</a></li>
+        <li><a href="q&a_page.html">Q&A</a></li>
       </ul>
     </nav>
 
@@ -41,185 +41,389 @@
         </div>
     <div class="hamburger">☰</div>
   </div>
+
 </header>
   <main class="main-container">
     <!-- Left: Ask Question -->
-    <section class="ask-section">
+    <section class="ask-section desktop-only">
       <h2>Q&A Community</h2>
- <div class="ask-box">
-  <div class="input-with-icon">
-    <input type="text" placeholder="What would you like to ask the community?" />
 
+ <div class="ask-box collapsed">
+  <!-- Title input -->
+  <div class="input-with-icon">
+    <input type="text" class="question-title" placeholder="Enter your question title..." />
+  </div>
+
+  <!-- Content textarea -->
+  <div class="input-with-icon">
+    <textarea class="question-content" placeholder="Describe your question in detail..."></textarea>
     <!-- Hidden file input -->
     <input type="file" id="fileUpload" accept="image/*" style="display:none;">
-
-    <!-- Paperclip icon inside textbox -->
+    <!-- Paperclip icon inside textarea -->
     <span class="upload-icon" onclick="document.getElementById('fileUpload').click()">
       <i class="fas fa-paperclip"></i>
     </span>
   </div>
 
-  <button class="ask-btn">Ask Question</button>
+  <!-- Submit button -->
+  <button class="ask-btn" onclick="toggleAskBox(this)">Ask Question</button>
 </div>
 
+<div class="qa-container">
 <div class="recent-questions">
   <h3>Recent Questions</h3>
   <ul>
-    <li>
-      <span class="votes">10</span> How do I debug an HTTP 500 error in Spring Boot?
-      <button class="reply-btn" onclick="toggleReply(this)">Reply</button>
-      <div class="reply-box">
-        <textarea placeholder="Write your answer..."></textarea>
-        <input type="file" accept="image/*">
-        <button class="submit-reply">Submit Answer</button>
-      </div>
+    <li onclick="showQuestionDesktop(this)">
+      <!-- <span class="votes">10</span> -->
+      <h4 class="question-title">How do I debug an HTTP 500 error in Spring Boot?</h4>
+      <p class="question-snippet">
+        I'm getting a 500 error when submitting forms in my Spring Boot app. The logs show a NullPointerException but I can't trace it back to the controller. Any ideas on how to debug this?
+      </p>
+      <span class="meta">Asked 5 mins ago | 10 helpful | 4 answers</span>
+      <img src="images/html.jpg" alt="Spring Boot Error Screenshot" class="uploaded-img">
     </li>
-    <li>
-      <span class="votes">8</span> What's the best way to handle async requests in Java?
-      <button class="reply-btn" onclick="toggleReply(this)">Reply</button>
-      <div class="reply-box">
-        <textarea placeholder="Write your answer..."></textarea>
-        <input type="file" accept="image/*">
-        <button class="submit-reply">Submit Answer</button>
-      </div>
+
+    <li onclick="showQuestionDesktop(this)">
+      <!-- <span class="votes">8</span> -->
+      <h4 class="question-title">What's the best way to handle async requests in Java?</h4>
+      <p class="question-snippet">
+        I'm building a REST API and need to handle multiple async calls efficiently. Should I use CompletableFuture, reactive programming with WebFlux, or stick to traditional threads?
+      </p>
+      <span class="meta">Asked 10 mins ago | 8 helpful | 3 answers</span>
     </li>
-    <li>
-      <span class="votes">5</span> How do I use Thymeleaf for form validation?
-      <button class="reply-btn" onclick="toggleReply(this)">Reply</button>
-      <div class="reply-box">
-        <textarea placeholder="Write your answer..."></textarea>
-        <input type="file" accept="image/*">
-        <button class="submit-reply">Submit Answer</button>
-      </div>
+
+    <li onclick="showQuestionDesktop(this)">
+      <!-- <span class="votes">5</span> -->
+      <h4 class="question-title">How do I use Thymeleaf for form validation?</h4>
+      <p class="question-snippet">
+        I'm trying to validate user input in a Thymeleaf form. I added annotations in my model, but the error messages don't show up in the template. What am I missing?
+      </p>
+      <span class="meta">Asked 15 mins ago | 5 helpful | 2 answers</span>
+      <img src="images/python-crash.jpg" alt="Thymeleaf Form Screenshot" class="uploaded-img">
     </li>
-    <li>
-      <span class="votes">3</span> Can you explain how dependency injection works in Spring?
-      <button class="reply-btn" onclick="toggleReply(this)">Reply</button>
-      <div class="reply-box">
-        <textarea placeholder="Write your answer..."></textarea>
-        <input type="file" accept="image/*">
-        <button class="submit-reply">Submit Answer</button>
-      </div>
+
+    <li onclick="showQuestionDesktop(this)">
+      <!-- <span class="votes">3</span> -->
+      <h4 class="question-title">Can you explain how dependency injection works in Spring?</h4>
+      <p class="question-snippet">
+        I keep hearing about dependency injection in Spring, but I'm not sure how it actually works behind the scenes. How does Spring know which beans to inject?
+      </p>
+      <span class="meta">Asked 20 mins ago | 3 helpful | 1 answer</span>
     </li>
   </ul>
 </div>
+</div>
+</section>
 
-
-    </section>
-    <div class="middle-column">
+   <div class="middle-column desktop-only">
   <!-- Leaderboard -->
   <aside class="leaderboard">
     <h3>Leaderboard</h3>
-    <ol>
-      <li>
-        <span class="rank-icon gold"><i class="fas fa-trophy"></i></span>
-        <img src="images/team-image/Ayomide.png" alt="Bryan Okafor" class="avatar">
-        <span class="rank">1.</span> Bryan Okafor
-      </li>
-      <li>
-        <span class="rank-icon silver"><i class="fas fa-medal"></i></span>
-        <img src="images/team-image/Capstone.jpeg" alt="Funmi Ade" class="avatar">
-        <span class="rank">2.</span> Funmi Ade
-      </li>
-      <li>
-        <span class="rank-icon bronze"><i class="fas fa-medal"></i></span>
-        <img src="images/team-image/Chioma.jpeg" alt="Mike Chinedu" class="avatar">
-        <span class="rank">3.</span> Mike Chinedu
-      </li>
-      <li>
-        <span class="rank-icon"><i class="fas fa-user"></i></span>
-        <img src="images/team-image/Goodluck.png" alt="Clara Ugwu" class="avatar">
-        <span class="rank">4.</span> Clara Ugwu
-      </li>
-      <li>
-        <span class="rank-icon"><i class="fas fa-user"></i></span>
-        <img src="images/team-image/Jomo.jpeg" alt="Ada Ebube" class="avatar">
-        <span class="rank">5.</span> Ada Ebube
-      </li>
-    </ol>
-  </aside>
+    <table class="leaderboard-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>User</th>
+          <th>Helpful Votes</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Top 1–5 -->
+        <tr>
+           <td>1</td>
+          <td><img src="images/team-image/Ayomide.png" class="avatar"> Bryan Okafor</td>
+          <td>25</td>
+          <td>250</td>
+        </tr>
+        <tr>
+           <td>2</td>
+          <td><img src="images/team-image/Capstone.jpeg" class="avatar"> Funmi Ade</td>
+          <td>18</td>
+          <td>180</td>
+        </tr>
+        <tr>
+           <td>3</td>
+          <td><img src="images/team-image/Chioma.jpeg" class="avatar"> Mike Chinedu</td>
+          <td>12</td>
+          <td>120</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><img src="images/team-image/Goodluck.png" class="avatar"> Clara Ugwu</td>
+          <td>9</td>
+          <td>90</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><img src="images/team-image/Jomo.jpeg" class="avatar"> Ada Ebube</td>
+          <td>7</td>
+          <td>70</td>
+        </tr>
 
-  <!-- Top Contributors -->
-  <aside class="contributors">
-    <h3>Top Contributors</h3>
-    <ul>
-      <li><img src="images/team-image/Ayomide.png" class="avatar"> Bryan Okafor</li>
-      <li><img src="images/team-image/Capstone.jpeg" class="avatar"> Funmi Ade</li>
-      <li><img src="images/team-image/Chioma.jpeg" class="avatar"> Mike Chinedu</li>
-      <li><img src="images/team-image/Goodluck.png" class="avatar"> Clara Ugwu</li>
-      <li><img src="images/team-image/Jomo.jpeg" class="avatar"> Ada Ebube</li>
-    </ul>
+        <!-- Divider -->
+        <tr class="divider">
+          <td colspan="4">— Next 5 —</td>
+        </tr>
+
+        <!-- 6–10 -->
+        <tr>
+          <td>6</td>
+          <td><img src="images/team-image/user6.png" class="avatar"> David Obi</td>
+          <td>6</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td><img src="images/team-image/user7.png" class="avatar"> Grace Nnamdi</td>
+          <td>5</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td><img src="images/team-image/user8.png" class="avatar"> Samuel Adeyemi</td>
+          <td>4</td>
+          <td>40</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td><img src="images/team-image/user9.png" class="avatar"> Chika Okoro</td>
+          <td>3</td>
+          <td>30</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td><img src="images/team-image/user10.png" class="avatar"> Emmanuel Uche</td>
+          <td>2</td>
+          <td>20</td>
+        </tr>
+      </tbody>
+    </table>
   </aside>
 </div>
-<section class="answer-section">
+
+<section class="answer-section desktop-only">
   <div class="question-header">
-    <h2>How do I debug an HTTP 500 error in Spring Boot?</h2>
-    <button class="answer-btn">Answer Question</button>
-  </div>
-  <p class="meta">Asked 5 mins ago | 10 helpful | 4 answers</p>
-  <p class="question-text">
-    I'm having trouble figuring out what's causing an HTTP 500 error in my Spring Boot application.
-    Can someone guide me on the best practices for debugging this issue?
-  </p>
-
-  <!-- Answer 1 -->
-  <div class="answer accepted">
-    <img src="images/team-image/Kajinake.png" alt="Clara Ugwu" class="avatar">
-    <div class="answer-content">
-      <p>
-        <strong>Clara Ugwu</strong> 
-        <span class="meta">– 7 helpful</span>
-        <span class="accepted-badge"><i class="fas fa-check"></i> Accepted</span>
-      </p>
-      <p>To troubleshoot, check your logs for specific stack traces and ensure your controller methods handle exceptions properly.</p>
-      <img src="images/Ai-dev.webp" alt="Debug Screenshot" class="uploaded-img">
-
-      <!-- Reply button + box -->
-      <button class="reply-btn" onclick="toggleReply(this)">Reply</button>
-      <div class="reply-box">
-        <textarea placeholder="Write your reply..."></textarea>
-        <input type="file" accept="image/*">
-        <button class="submit-reply">Submit Reply</button>
-      </div>
-    </div>
+    <h2 id="answer-title"></h2>
+    <button class="answer-btn" onclick="toggleAnswerBox(this)">Answer Question</button>
   </div>
 
-  <!-- Answer 2 -->
-  <div class="answer">
-    <img src="images/team-image/liam.png" alt="Bryan Okafor" class="avatar">
-    <div class="answer-content">
-      <p><strong>Bryan Okafor</strong> <span class="meta">– 4 helpful</span></p>
-      <p>Make sure to check the HttpServlet stack trace to find the exact cause of the error.</p>
-      <img src="images/html.jpg" alt="Server Error Screenshot" class="uploaded-img">
+  <p class="meta" id="answer-meta"></p>
+  <p class="question-text" id="answer-text"></p>
+  <div id="answer-images"></div>
 
-      <button class="reply-btn" onclick="toggleReply(this)">Reply</button>
-      <div class="reply-box">
-        <textarea placeholder="Write your reply..."></textarea>
-        <input type="file" accept="image/*">
-        <button class="submit-reply">Submit Reply</button>
-      </div>
-    </div>
+  <!-- Answer input box -->
+ <!-- Answer input box -->
+<div class="answer-box collapsed">
+  <div class="input-with-icon">
+    <textarea class="answer-textarea" placeholder="Write your answer..."></textarea>
+    <input type="file" id="answerFileUpload" accept="image/*" style="display:none;">
+    <span class="upload-icon" onclick="document.getElementById('answerFileUpload').click()">
+      <i class="fas fa-paperclip"></i>
+    </span>
   </div>
-
-  <!-- Answer 3 -->
-  <div class="answer">
-    <img src="images/javascript.jpg" alt="Ada Ebube" class="avatar">
-    <div class="answer-content">
-      <p><strong>Ada Ebube</strong> <span class="meta">– 3 helpful</span></p>
-      <p>Verify that your application-context.xml is configured correctly. Misconfigurations can lead to 500 errors.</p>
-      <img src="images/java-course.jpg" alt="Server Error Screenshot" class="uploaded-img">
-
-      <button class="reply-btn" onclick="toggleReply(this)">Reply</button>
-      <div class="reply-box">
-        <textarea placeholder="Write your reply..."></textarea>
-        <input type="file" accept="image/*">
-        <button class="submit-reply">Submit Reply</button>
-      </div>
-    </div>
+  <div class="answer-actions">
+    <button class="submit-answer">Submit Answer</button>
+    <button class="cancel-answer" onclick="toggleAnswerBox(this)">Cancel</button>
   </div>
+</div>
+
+  <!-- Answers injected dynamically -->
+  <div id="answers-container-desktop">
+    <!-- answers will be injected here after clicking a question -->
 </section>
 
-  </main>
-  <script src="js/replyToggle.js"></script>
+<!-- MOBILE VIEW -->
+<div id="questions-mobile" class="page mobile-only active">
+  <h2>Recent Questions</h2>
+
+  <!-- Navigation buttons -->
+  <div class="nav-buttons">
+    <button class="leaderboard-btn" onclick="showPage('leaderboard-mobile')">Leaderboard</button>
+  </div>
+
+ <!-- Ask Question box (mobile) -->
+<div class="ask-box collapsed">
+  <!-- Only the button shows at first -->
+  <button class="ask-btn" onclick="toggleAskBox(this)">Ask Question</button>
+
+  <!-- Title input -->
+  <div class="input-with-icon">
+    <input type="text" class="question-title" placeholder="Enter your question title..." />
+  </div>
+
+  <!-- Content textarea with paperclip -->
+  <div class="input-with-icon">
+    <textarea class="question-content" placeholder="Describe your question in detail..."></textarea>
+    <!-- Hidden file input -->
+    <input type="file" id="fileUploadMobile" accept="image/*" style="display:none;">
+    <!-- Paperclip icon -->
+    <span class="upload-icon" onclick="document.getElementById('fileUploadMobile').click()">
+      <i class="fas fa-paperclip"></i>
+    </span>
+  </div>
+</div>
+
+
+  <!-- Mobile Recent Questions list -->
+  <section class="recent-questions">
+    <ul>
+      <li onclick="showQuestionMobile(this)">
+        <h4 class="question-title">How do I debug an HTTP 500 error in Spring Boot?</h4>
+        <p class="question-snippet">I'm getting a 500 error when submitting forms...</p>
+        <span class="meta">Asked 5 mins ago | 10 helpful | 4 answers</span>
+      </li>
+
+      <li onclick="showQuestionMobile(this)">
+        <h4 class="question-title">What's the best way to handle async requests in Java?</h4>
+        <p class="question-snippet">
+          I'm building a REST API and need to handle multiple async calls efficiently. Should I use CompletableFuture, reactive programming with WebFlux, or stick to traditional threads?
+        </p>
+        <span class="meta">Asked 10 mins ago | 8 helpful | 3 answers</span>
+      </li>
+
+      <li onclick="showQuestionMobile(this)">
+        <h4 class="question-title">How do I use Thymeleaf for form validation?</h4>
+        <p class="question-snippet">
+          I'm trying to validate user input in a Thymeleaf form. I added annotations in my model, but the error messages don't show up in the template. What am I missing?
+        </p>
+        <span class="meta">Asked 15 mins ago | 5 helpful | 2 answers</span>
+        <img src="images/python-crash.jpg" alt="Thymeleaf Form Screenshot" class="uploaded-img">
+      </li>
+
+      <li onclick="showQuestionMobile(this)">
+        <h4 class="question-title">Can you explain how dependency injection works in Spring?</h4>
+        <p class="question-snippet">
+          I keep hearing about dependency injection in Spring, but I'm not sure how it actually works behind the scenes. How does Spring know which beans to inject?
+        </p>
+        <span class="meta">Asked 20 mins ago | 3 helpful | 1 answer</span>
+      </li>
+    </ul>
+  </section>
+</div>
+
+
+<!-- Mobile Answers page -->
+<div id="answers-mobile" class="page mobile-only">
+  <div class="question-header">
+    <button class="back-btn" onclick="showPage('questions-mobile')">← Back to questions</button>
+    <h2 id="answer-title-mobile"></h2>
+  <button class="answer-btn" onclick="toggleAnswerBoxMobile(this)">Answer Question</button>
+  </div>
+
+  <p class="meta" id="answer-meta-mobile"></p>
+  <p class="question-text" id="answer-text-mobile"></p>
+  <div id="answer-images-mobile"></div>
+
+<!-- Hidden until expanded -->
+<div class="answer-box collapsed">
+  <div class="input-with-icon">
+    <textarea class="answer-textarea" placeholder="Write your answer..."></textarea>
+    <input type="file" id="answerFileUploadMobile" accept="image/*" style="display:none;">
+    <span class="upload-icon" onclick="document.getElementById('answerFileUploadMobile').click()">
+      <i class="fas fa-paperclip"></i>
+    </span>
+  </div>
+  <div class="answer-actions">
+    <button class="submit-answer">Submit Answer</button>
+    <button class="cancel-answer" onclick="toggleAnswerBoxMobile(this)">Cancel</button>
+  </div>
+</div>
+
+
+
+  <div id="answers-container-mobile"></div>
+</div>
+<div id="leaderboard-mobile" class="page mobile-only">
+  <!-- Back button at the top -->
+  <button class="leaderboard-back-btn" onclick="showPage('questions-mobile')">
+    ← Back to Questions
+  </button>
+
+  <h2>Leaderboard</h2>
+  <table class="leaderboard-table">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>User</th>
+        <th>Helpful Votes</th>
+        <th>Points</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Top 1–5 -->
+      <tr>
+        <td>1</td>
+        <td><img src="images/team-image/Ayomide.png" class="avatar"> Bryan Okafor</td>
+        <td>25</td>
+        <td>250</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><img src="images/team-image/Capstone.jpeg" class="avatar"> Funmi Ade</td>
+        <td>18</td>
+        <td>180</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><img src="images/team-image/Chioma.jpeg" class="avatar"> Mike Chinedu</td>
+        <td>12</td>
+        <td>120</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><img src="images/team-image/Goodluck.png" class="avatar"> Clara Ugwu</td>
+        <td>9</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><img src="images/team-image/Jomo.jpeg" class="avatar"> Ada Ebube</td>
+        <td>7</td>
+        <td>70</td>
+      </tr>
+
+      <!-- Divider -->
+      <tr class="divider">
+        <td colspan="4">— Next 5 —</td>
+      </tr>
+
+      <!-- 6–10 -->
+      <tr>
+        <td>6</td>
+        <td><img src="images/team-image/user6.png" class="avatar"> David Obi</td>
+        <td>6</td>
+        <td>60</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><img src="images/team-image/user7.png" class="avatar"> Grace Nnamdi</td>
+        <td>5</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><img src="images/team-image/user8.png" class="avatar"> Samuel Adeyemi</td>
+        <td>4</td>
+        <td>40</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><img src="images/team-image/user9.png" class="avatar"> Chika Okoro</td>
+        <td>3</td>
+        <td>30</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><img src="images/team-image/user10.png" class="avatar"> Emmanuel Uche</td>
+        <td>2</td>
+        <td>20</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</main>
+  <script src="js/q&aFunctions.js"></script>
 </body>
 </html>

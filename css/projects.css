@@ -261,7 +261,7 @@
   display: inline-block;
 }
 
-.btn-details:hover {
+.btn-details:hover { 
   background: var(--primary);
   color: #fff;
   border-color: var(--primary);

@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       if (response.ok) {
         if (profileMenu) profileMenu.style.display = "block";
-        // joinBtn stays hidden (default CSS)
       } else {
         localStorage.removeItem("jwtToken");
         if (joinBtn) joinBtn.style.display = "inline-block";
